@@ -1,4 +1,12 @@
-1. Create a address class with following attribute.
+1. Create a address class with following attribute:- street,city,zip,country
+Create an Customer class with the following attributes:-customerId customerName,customerContact,customerAddress.
+Inject the Address bean into Customer bean using setter injection
+Create a Test Class with main() method,get Customer bean from ApplicationContext object and print details of Customer.
+Also write the JUnit Test cases for above program.
+  - Modify the above application and inject the bean using constructor injection
+  - USe XML based Configuration.
+
+Answer): 
 
 Class Address
 package spring_example;
@@ -90,7 +98,7 @@ public class Customer   {
 	public void cust()
 	{
 		System.out.println();
-		System.out.println("*************************customer Details*******************************");
+		System.out.println("customer Details");
 		System.out.println();
 		System.out.println("Id: "+this.customerid);
 		System.out.println("Name: "+this.customername);
@@ -113,8 +121,8 @@ Beans.xml File
 	 
 	<bean id="Customer" class="spring_example.Customer" >
 		<property name="customerid" value="632"/>
-		<property name="customername" value="AJAY PRADHAN"/>
-		<property name="customercontact" value="9096660872"/>
+		<property name="customername" value="John"/>
+		<property name="customercontact" value="9776652145/>
 		<property name="address">
 			<list>
 				<ref bean="AddressDetails"/>
@@ -123,10 +131,10 @@ Beans.xml File
 	</bean>
 	
 	<bean id="AddressDetails" class="spring_example.Address" >
-		<property name="street" value="Hingna Road"/>
-		<property name="city" value="Nagpur"/>
-		<property name="state" value="Maharashtra"/>
-		<property name="zip" value="440016"/>
+		<property name="street" value="Palakkada Road"/>
+		<property name="city" value="Kozhikode"/>
+		<property name="state" value="Kerala"/>
+		<property name="zip" value="673005"/>
 		<property name="country" value="India"/>
 	</bean>
 	
